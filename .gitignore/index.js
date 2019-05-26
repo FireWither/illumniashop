@@ -129,7 +129,7 @@ bot.on('message', message => {
                         }else{
                             var price = quantity*items[i].price;
                             buyer.send("Récapitulatif de la commande:\nProduit:"+productbuy+"\nQuantité:"+quantity+"\nPrix:"+price+"$");
-                            bot.channels.get("t").send(Pseudo+" à commandé:\n"+quantity+" "+productbuy+" pour "+price+"$")
+                            bot.channels.get(process.env.CHANNEL).send(Pseudo+" à commandé:\n"+quantity+" "+productbuy+" pour "+price+"$")
                             .then(function (BotMsg) {
                                 BotMsg.react("❌")
                                 BotMsg.react("✅")
@@ -181,4 +181,4 @@ bot.on('message', message => {
     }
    
 })
-bot.login()
+bot.login(process.env.TOKEN)
