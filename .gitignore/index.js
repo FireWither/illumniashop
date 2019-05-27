@@ -144,10 +144,11 @@ bot.on('message', message => {
                                         var obj = Object.entries(reaction.users.last(1))[0][1];
                                         var result = Object.keys(obj).map(function(key) {
                                             return [String(key), obj[key]];
-                                          }); 
+                                          });
+                                        var UserId = result[0];
                                         var UserName = result[1];
                                         buyer.send("Votre commande de l'item "+productbuy+" vient d'être commencé par "+ UserName[1]);
-                                        bot.users.get('261170601140420618').send("Récapitulatif de la commande prise:\nProduit:"+productbuy+"\nQuantité:"+quantity+"\nPrix:"+price+"$\nAcheteur:"+Pseudo);
+                                        bot.users.get(UserId[1]).send("Récapitulatif de la commande prise:\nProduit:"+productbuy+"\nQuantité:"+quantity+"\nPrix:"+price+"$\nAcheteur:"+Pseudo);
                                         BotMsg.delete();
                                     }
                                 })
