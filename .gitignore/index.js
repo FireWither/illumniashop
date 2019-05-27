@@ -8,7 +8,7 @@ var splitBuy =["buy","achat","b"];
 var splitListProduct =["list","l"];
 var fs = require('fs');
 function AddItem(ProductAddName,ProductAddPrice){
-    fs.readFile('product.json', 'utf8', function readFileCallback(err, data){
+    fs.readFile('Product.json', 'utf8', function readFileCallback(err, data){
         if (err){
             console.log(err);
         } else {
@@ -19,11 +19,11 @@ function AddItem(ProductAddName,ProductAddPrice){
         }
         obj.Product.push(ProductAdd); //add some data
         json = JSON.stringify(obj); //convert it back to json
-        fs.writeFileSync('product.json', json, 'utf8'); // write it back 
+        fs.writeFileSync('Product.json', json, 'utf8'); // write it back 
     }});
 }
 function RemoveItem(ProductRemove){
-    fs.readFile('product.json', 'utf8', function readFileCallback(err, data){
+    fs.readFile('Product.json', 'utf8', function readFileCallback(err, data){
         if (err){
             console.log(err);
         } else {
@@ -36,20 +36,7 @@ function RemoveItem(ProductRemove){
             }
         }
         json = JSON.stringify(obj); //convert it back to json
-        fs.writeFileSync('product.json', json, 'utf8'); // write it back 
-    }});
-}
-function ListItem(ProductRemove){
-    fs.readFile('product.json', 'utf8', function readFileCallback(err, data){
-        if (err){
-            console.log(err);
-        } else {
-        obj = JSON.parse(data); //now it an object
-        var items=obj.Product;
-        var i=items.length;
-        while (i--) {
-            message.channel.send(items[i].name+" : "+items[i].price)
-        }
+        fs.writeFileSync('Product.json', json, 'utf8'); // write it back 
     }});
 }
 
@@ -85,7 +72,7 @@ bot.on('message', message => {
                 message.channel.send('./shopmodo RemoveProduct Produit')
             }else if(splitListProduct.includes(split[1].toLowerCase())){
                 function ListItem(){
-                    fs.readFile('product.json', 'utf8', function readFileCallback(err, data){
+                    fs.readFile('Product.json', 'utf8', function readFileCallback(err, data){
                         if (err){
                             console.log(err);
                         } else {
