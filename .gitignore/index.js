@@ -72,7 +72,7 @@ bot.on('message', message => {
                 message.channel.send('./shopmodo RemoveProduct Produit')
             }else if(splitListProduct.includes(split[1].toLowerCase())){
                 function ListItem(){
-                    fs.readFile('.gitignore/product.json', 'utf8', function readFileCallback(err, data){
+                    fs.readFile('product.json', 'utf8', function readFileCallback(err, data){
                         if (err){
                             console.log(err);
                         } else {
