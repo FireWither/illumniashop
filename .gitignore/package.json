@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "clash-of-clans-api": "^0.5.0",
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
     "sqlite3": "^4.1.1"
   }
 }
