@@ -72,7 +72,7 @@ bot.on('message', message => {
                 }
              });
         }
-        if(message.member.roles.has('591008491116822652')){
+        if(message.member.roles.has('604741828436295700')){
             if(msgWpre == "add"){
                 pseudo = split[1];
                 money = split[2]
