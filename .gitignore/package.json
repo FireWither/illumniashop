@@ -11,5 +11,9 @@
   "dependencies": {
     "clash-of-clans-api": "^0.5.0",
     "discord.js": "^11.4.2"
+  },
+  "devDependencies": {
+    "@types/sqlite3": "^3.1.6",
   }
 }
+
