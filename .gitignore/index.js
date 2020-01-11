@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-var sqlite3 = require('sqlite3').verbose();
+var sqlite3 = require('nodes_modules/@type/sqlite3').verbose();
 var db = new sqlite3.Database('users.db3');
 const bot = new Discord.Client();
 var manyPseudo;
