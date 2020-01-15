@@ -72,13 +72,18 @@ bot.on('message', message => {
                 }
              });
         }
-        if(message.member.roles.has('604741828436295700')){
+        if(message.member.roles.has('591008491116822652')){
             if(msgWpre == "add"){
                 pseudo = split[1];
                 money = split[2]
                 db.each('SELECT * FROM profile WHERE username=?',[pseudo], function(err,row) {
                     if(err){
-                        console.log(err);
+                        var Embed = new Discord.RichEmbed()
+                            .setColor('#0099ff')
+                            .setTitle("Error")
+                            .setAuthor('Nexion Spin', 'https://cdn.discordapp.com/icons/464038443786174477/a_4479f213aaecbb0a57562cab7155c4e3.png?size=128')
+                            .addField('Compte inexistant');
+                        message.channel.send(Embed);
                     }else{
                         db.run("UPDATE profile SET money = ? WHERE username = ?", [row["money"]+money,pseudo]);
                         var Embed = new Discord.RichEmbed()
@@ -95,7 +100,12 @@ bot.on('message', message => {
                 money = split[2]
                 db.each('SELECT * FROM profile WHERE username=?',[pseudo], function(err,row) {
                     if(err){
-                        console.log(err);
+                        var Embed = new Discord.RichEmbed()
+                            .setColor('#0099ff')
+                            .setTitle("Error")
+                            .setAuthor('Nexion Spin', 'https://cdn.discordapp.com/icons/464038443786174477/a_4479f213aaecbb0a57562cab7155c4e3.png?size=128')
+                            .addField('Compte inexistant');
+                        message.channel.send(Embed);
                     }else{
                         db.run("UPDATE profile SET money = ? WHERE username = ?", [money,pseudo]);
                         var Embed = new Discord.RichEmbed()
@@ -112,7 +122,12 @@ bot.on('message', message => {
                 money = split[2]
                 db.each('SELECT * FROM profile WHERE username=?',[pseudo], function(err,row) {
                     if(err){
-                        console.log(err);
+                        var Embed = new Discord.RichEmbed()
+                            .setColor('#0099ff')
+                            .setTitle("Error")
+                            .setAuthor('Nexion Spin', 'https://cdn.discordapp.com/icons/464038443786174477/a_4479f213aaecbb0a57562cab7155c4e3.png?size=128')
+                            .addField('Compte inexistant');
+                        message.channel.send(Embed);
                     }else{
                         db.run("UPDATE profile SET money = ? WHERE username = ?", [row["money"]-money,pseudo]);
                         var Embed = new Discord.RichEmbed()
@@ -139,7 +154,7 @@ bot.on('message', message => {
                                     .setColor('#0099ff')
                                     .setTitle("Error")
                                     .setAuthor('Nexion Spin', 'https://cdn.discordapp.com/icons/464038443786174477/a_4479f213aaecbb0a57562cab7155c4e3.png?size=128')
-                                    .addField('Argent insuffisant','Il vous reste'+money+'$');
+                                    .addField('Argent insuffisant','Il vous reste '+row["money"]+'$');
                                 message.channel.send(Embed);
                            }else{
                                 let values = [0,  0.1,   0.5,   0.75,   1,  2,  5,  10, 25];
