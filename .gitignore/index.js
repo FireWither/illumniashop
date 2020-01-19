@@ -100,7 +100,7 @@ bot.on('message', message => {
                             .setColor('#0099ff')
                             .setTitle("Information")
                             .setAuthor('Nexion Spin', 'https://cdn.discordapp.com/icons/464038443786174477/a_4479f213aaecbb0a57562cab7155c4e3.png?size=128')
-                            .addField('Compte de '+pseudo+" à été maintenant",money+'$');
+                            .addField('Compte de '+pseudo+" posséde maintenant",money+'$');
                         message.channel.send(Embed);
                     }
                 });
@@ -140,7 +140,7 @@ bot.on('message', message => {
                                 message.channel.send(Embed);
                            }else{
                                 let values = [0,  0.1,   0.5,   0.75,   1,  2,  5,  10, 25];
-                                let probas = [0.30, 0.25, 0.15, 0.144,0.075,0.05,0.025,0.005,0.001];
+                                let probas = [0.20, 0.15, 0.15, 0.10,0.139,0.15,0.10,0.01,0.001];
                                 function pickWeightedRandomValue(values, weights) {
                                     let rand = Math.random();
                                     for(let i=0; i<weights.length; i++) {
