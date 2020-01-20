@@ -140,7 +140,7 @@ bot.on('message', message => {
                                 message.channel.send(Embed);
                            }else{
                                 let values = [0,  0.1,   0.5,   0.75,   1,  2,  5,  10, 25];
-                                let probas = [0.30, 0.20, 0.15, 0.10,0.139,0.10,0.05,0.01,0.001];
+                                let probas = [0.325, 0.25, 0.15, 0.10,0.039,0.075,0.05,0.01,0.001];
                                 function pickWeightedRandomValue(values, weights) {
                                     let rand = Math.random();
                                     for(let i=0; i<weights.length; i++) {
